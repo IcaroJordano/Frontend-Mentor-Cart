@@ -1,0 +1,38 @@
+.true{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background-color: white;
+        top: 88%;
+        left: 28%;
+        height: 6vh;
+        width: 40vw;
+        border: 1px gray solid;
+        font-size: larger;
+        font-weight: 500;
+        border-radius: 45px;
+    }
+.false{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    background-color: rgba(185, 29, 29, 0.897);
+    top: 88%;
+    left: 28%;
+    height: 6vh;
+    width: 40vw;
+    border: none;
+    font-size: larger;
+    font-weight: 500;
+    border-radius: 45px;
+}
+.false svg{
+    margin-left: 3%;
+    scale: 1.7;
+    color: white;
+}
+.false p{
+    color: white;
+}
