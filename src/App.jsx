@@ -15,8 +15,8 @@ import { useState } from 'react'
 function App() {
   const allProducts = [
     ["whafle",image1,"Waffle with Berries","6.50"],
-    ['Creme Brulee',image2,"Waffle with Berries",'7.00'],
-    ['Macaron',image3,"Waffle with Berries","8.00"]
+    ['Creme Brulee',image2,"Vanilla Bean Creme Brulee",'7.00'],
+    ['Macaron',image3,"Macaron Mix of Five","8.00"]
   ]
   const [listProducts, setlistProducts] = useState([])
   const images=[image1,image2,image3,image4,image5,image6,image7,image8,image9]

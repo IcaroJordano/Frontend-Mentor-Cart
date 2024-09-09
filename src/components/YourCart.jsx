@@ -27,22 +27,21 @@ export function YourCart({allProducts,listProducts} ) {
     return(
         <div className="YourCart">
             <h3>Your Cart ({listProducts.length})</h3>
-            {listProducts?(
+            {listProducts.length?(
                 <div >
                     <div>
-                        {cart.map((item)=>(<CardProductsInCart cart={cart} valor={item}></CardProductsInCart>))}
+                        {cart.map((item,index)=>(<CardProductsInCart name={allProducts[index][2]} preco={allProducts[index][3]} cart={cart} valor={item}></CardProductsInCart>))}
                         {/* {cart.map((item)=>{
                             item.map((r)=>(
                                 <p>{item}</p>
                             ))
                         })} */}
+                        <div className="order">
+                            <h4>Order Total</h4>
+                            <h5>$46.50</h5>
+                        </div>
+                        <button>Confirm Order</button>
                     </div>
-                <div className="order">
-                    <h4>Order Total</h4>
-                    <h5>$46.50</h5>
-                </div>
-                <button>Confirm Order</button>
-            
                 </div>)
                 :(
                 <>
