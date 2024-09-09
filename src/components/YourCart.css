@@ -5,6 +5,7 @@
     margin: 0% auto 10%;
     border-radius: 4%;
     padding:5% 0 10% 0 ;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .YourCart svg{
     color: rgba(165, 42, 42, 0.76);
@@ -24,4 +25,34 @@
     font-weight: 700;
     width: 100%;
     justify-content: center
+}
+.YourCart .order{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.YourCart .order h4{
+    color: rgba(0, 0, 0, 0.548);
+    font-size: 18px;
+    font-weight: 400;
+}
+.YourCart .order h5{
+    font-size: 29px;
+}
+.YourCart button{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    background-color: rgba(182, 53, 36, 0.856);
+    border: none;
+    align-items: center;
+    border-radius: 45px;
+    height: 8vh;
+    justify-content: center;
+    font-size: larger;
+    font-weight: 600;
+    color: white;
 }

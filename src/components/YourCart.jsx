@@ -3,11 +3,10 @@ import "./YourCart.css"
 import { SiCakephp } from "react-icons/si";
 import { CardProductsInCart } from "./CardProductsInCart";
 
-
 export function YourCart({allProducts,listProducts} ) {
     const [cart,setCart]=useState([])
     useEffect(()=>{
-        var lista=[]
+        let lista=[]
         allProducts.map((item)=>{
             if (listProducts.sort().indexOf(item[0])!=-1){
                     lista.push(
@@ -19,25 +18,31 @@ export function YourCart({allProducts,listProducts} ) {
                 lista.push(0)
             }}        
     )
-    setCart([lista])
+    setCart(lista)
+    // alert(typeof(lista))
     },[listProducts])
+    // useEffect(()=>{console.log(typeof())},[cart])
 
 
     return(
         <div className="YourCart">
             <h3>Your Cart ({listProducts.length})</h3>
             {listProducts?(
-                <div>
+                <div >
                     <div>
-                        
-                        {cart.map((item)=>(item?(<p>{item}</p>):(<p>{1}</p>))
-                        
-                    )}
-                    
+                        {cart.map((item)=>(<CardProductsInCart cart={cart} valor={item}></CardProductsInCart>))}
+                        {/* {cart.map((item)=>{
+                            item.map((r)=>(
+                                <p>{item}</p>
+                            ))
+                        })} */}
                     </div>
-                <h4>Order Total</h4>
-                <h5>$46.50</h5>
+                <div className="order">
+                    <h4>Order Total</h4>
+                    <h5>$46.50</h5>
+                </div>
                 <button>Confirm Order</button>
+            
                 </div>)
                 :(
                 <>
