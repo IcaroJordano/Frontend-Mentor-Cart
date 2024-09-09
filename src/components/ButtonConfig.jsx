@@ -3,29 +3,26 @@ import { IoAddCircleOutline } from "react-icons/io5";
 import { IoMdRemoveCircleOutline } from "react-icons/io";
 import "./ButtonConfig.css"
 
-function ButtonConfig({check, setCheck, setColorBorder, setcountProducts, countProducts,listProducts, setlistProducts}) {
-    const count=true
+function ButtonConfig({check, name, setCheck, setColorBorder,listProducts, setlistProducts}) {
     check?setColorBorder(true):setColorBorder(false);
+    let lista=listProducts
     return(
     <>
         {check?
         (<button className="false" >
             <IoMdRemoveCircleOutline onClick={()=>{
                 setCheck(check-1)
-                setcountProducts(countProducts-1)
-                setlistProducts(listProducts.slice(0,listProducts.length-1))
+                lista.splice((lista.lastIndexOf(name)),1)
+                setlistProducts([...lista])
                 }} /> 
             <p>{check}</p>
             <IoAddCircleOutline onClick={()=>{
-                setlistProducts([...listProducts,"product"])
+                setlistProducts([...listProducts,`${name}`])
                 setCheck(check+1)
-                setcountProducts(countProducts+1)
             }}/></button>):
         (<button className="true" onClick={()=>{ 
             setCheck(check+1)
-            setcountProducts(countProducts+1)
-            setlistProducts([...listProducts,"product"])
-
+            setlistProducts([...listProducts,`${name}`])
             }}>
             
              <FaCartPlus ></FaCartPlus>

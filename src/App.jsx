@@ -13,16 +13,20 @@ import { YourCart } from './components/YourCart'
 import { useState } from 'react'
 
 function App() {
-  const [countProducts, setcountProducts] = useState(0)
+  const allProducts = [
+    ["whafle",image1,"Waffle with Berries","6.50"],
+    ['Creme Brulee',image2,"Waffle with Berries",'7.00'],
+    ['Macaron',image3,"Waffle with Berries","8.00"]
+  ]
   const [listProducts, setlistProducts] = useState([])
   const images=[image1,image2,image3,image4,image5,image6,image7,image8,image9]
   return (
     <>
       <h1>Desserts</h1>
-      {images.map((item)=>(
-        <CardProducts setlistProducts={setlistProducts} listProducts={listProducts} image={item} countProducts={countProducts} setcountProducts={setcountProducts}></CardProducts>)
+      {allProducts.map((item)=>(
+        <CardProducts name={item[0]} description={item[2]} preco={item[3]} setlistProducts={setlistProducts} listProducts={listProducts} image={item[1]}></CardProducts>)
       )}
-      <YourCart listProducts={listProducts} countProducts={countProducts}></YourCart>
+      <YourCart listProducts={listProducts} allProducts={allProducts}></YourCart>
     </>
   )
 }
